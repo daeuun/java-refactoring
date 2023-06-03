@@ -12,5 +12,15 @@ public record Participant(String username, Map<Integer, Boolean> homework) {
         this.homework.put(index, true);
     }
 
-
+    /**
+     * 메서드가 어떤 클래스에 의존해야하는지 고려하여 위치 변경
+     * @param studyDashboard
+     * @return
+     */
+    double getRate(int studyDashboard) {
+        long count = homework().values().stream()
+                .filter(v -> v == true)
+                .count();
+        return (double) (count * 100 / studyDashboard);
+    }
 }
