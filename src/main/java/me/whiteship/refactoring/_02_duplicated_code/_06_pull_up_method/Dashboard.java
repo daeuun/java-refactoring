@@ -18,6 +18,12 @@ public class Dashboard {
         participantDashboard.printUsernames(15);
     }
 
+    /**
+     * 템플릿 메서드 패턴 적용한 상위 메서드.
+     * 공통 조건을 상위 클래스에서 구현하고, 세부 조건이 필요하면 하위 클래스에서 오버라이딩으로 구현한다.
+     * @param eventId
+     * @throws IOException
+     */
     public static void printUsernames(int eventId) throws IOException {
         // Get github issue to check homework
         GitHub gitHub = GitHub.connect();
